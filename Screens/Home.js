@@ -2,11 +2,11 @@ import React from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 
 function Home() {
-  return (
-    <View>
-        <Text>Soy Home</Text>
-    </View>
-  )
+    return (
+        <View>
+            <Text>Soy Home</Text>
+        </View>
+    )
 }
 const styles = StyleSheet.create({
     container: {
