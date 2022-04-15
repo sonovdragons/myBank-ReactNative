@@ -13,9 +13,7 @@ export default function App() {
   if (!loaded) return <AppLoading />
 
   return (
-    <View style={styles.container}>
       <BankNavigator />
-    </View>
   );
 }
 

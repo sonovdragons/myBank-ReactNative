@@ -1,10 +1,19 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, Button} from 'react-native'
 
-function Home() {
+function Home({navigation}) {
     return (
         <View>
-            <Text>Soy Home</Text>
+            <Text>SALDO</Text>
+            <Text>Movimientos</Text>
+            <Button title='Ir a movimientos' onPress={()=> {
+                navigation.navigate('Movimientos')
+            }} />
+            <Text>Tarjetas</Text>
+            <Button title='Ir a Tarjetas' onPress={() => {
+                navigation.navigate('Tarjetas')
+            }} />
+            <Text>Beneficios</Text>
         </View>
     )
 }
