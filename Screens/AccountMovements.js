@@ -1,12 +1,13 @@
 import React from 'react'
 import {View, Text, StyleSheet, Button} from 'react-native'
+import Colors from '../constants/color'
 
 function AccountMovements({navigation}) {
     return (
         <View>
             <Text>AccountMovements</Text>
-            <Button title="Ir a Tarjetas" onPress={() => {
-                navigation.navigate('BankCards')
+            <Button title='Volver a Home' color={Colors.primary} onPress={() => {
+                navigation.navigate('Home')
             }} />
             
         </View>
