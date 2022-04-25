@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font'
 import AppLoading from 'expo-app-loading'
-import BankNavigator from './navigation/BankNavigator';
+import MainNavigator from './navigation';
 
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
   if (!loaded) return <AppLoading />
 
   return (
-      <BankNavigator />
+      <MainNavigator />
   );
 }
 

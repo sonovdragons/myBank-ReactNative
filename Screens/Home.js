@@ -1,12 +1,14 @@
 import React from 'react'
 import {View, Text, StyleSheet, Button} from 'react-native'
 import Colors from '../constants/color'
+import UserScreen from './UserScreen'
 
 function Home({navigation}) {
     return (
         <View style={styles.container}>
             <View style={styles.cardIncome}>
                 <Text>SALDO</Text>
+                <UserScreen />
             </View>
             <View style={styles.cardMovements}>
                 <Text>Movimientos</Text>
