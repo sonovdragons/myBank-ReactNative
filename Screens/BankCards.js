@@ -1,10 +1,32 @@
+import { NavigationContainer } from '@react-navigation/native'
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, FlatList} from 'react-native'
+import { useSelector, useDispatch } from "react-redux"
+import {selectCard} from '../store/actions/cards.action'
 
 function BankCards() {
+    const dispatch = useDispatch()
+    const categoryCards = useSelector(state => state.cards.filtered)
+    const category = useSelector(state => state.users.selected)
+
+    const handlerSelectedCard = (item) => {
+        dispatch (selectCard(item.id))
+        navigation.push("BankCardReducer", {name: item.brand})
+    }
+
+    const renderGridItem =(itemData) =>{
+        <CategoryGridTile
+            item={itemData.item}
+            onSelected={handlerSelectedCard}
+        />
+    }
     return (
         <View>
-            <Text>BankCards</Text>
+            <FlatList
+                data={categoryCards}
+                leyExtractor={(item) => item.id.toString()}
+                renderUser={renderUser}
+                />
         </View>
     )
 }

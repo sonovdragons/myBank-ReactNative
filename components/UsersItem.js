@@ -2,9 +2,12 @@ import React from 'react'
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
 import Color from '../constants/color'
+import {useSelector} from 'react-redux'
 
 
 function UsersItem({item}) {
+    const users = useSelector(state => state.users.selected)
+
     return (
         <View>
             <View style={styles.item}>

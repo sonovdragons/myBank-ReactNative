@@ -1,15 +1,28 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { FlatList, TouchableOpacity, View, StyleSheet, Text } from "react-native"
 import UsersItem from "../components/UsersItem"
 import {USERS} from '../data/usuarios'
+import { useSelector, useDispatch } from "react-redux"
+import { filteredUser, selectUser } from "../store/actions/user.action"
+import { NavigationContainer } from "@react-navigation/native"
 
-
-const UserScreen = () => {
+const UserScreen = ({navigation}) => {
     const users = {USERS}
-    
+
+    const dispatch = useDispatch()
+    const categoryUser = useSelector(state => state.user.filteredUser)
+    const category = useSelector(state => state.category.selected)
+
+    useEffect(() =>{
+        dispatch(filteredUser(category.id))
+    }, [])
+    const handlerSelected = (user) => {
+        dispatch(selectUser(user.id))
+        navigation.navigate("UsersItem", {name: user.name})
+    }
 
     const renderUser= ({users}) =>{
-        <UsersItem users={users}/>
+        <UsersItem users={users} onSelectUser={handlerSelected}/>
     }
     return (
         <View style={styles.container}>
