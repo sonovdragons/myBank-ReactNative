@@ -1,8 +1,8 @@
-import {User} from '../../data/usuarios'
+import {USER} from '../../data/usuarios'
 import { SELECTED_USER, FILTERED_USER } from '../actions/user.action'
 
 const initalState = {
-    users: User,
+    users: USER,
     filteredUser: [],
     selected: null
 }

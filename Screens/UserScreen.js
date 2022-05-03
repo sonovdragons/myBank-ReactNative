@@ -1,13 +1,13 @@
 import React, {useEffect} from "react"
 import { FlatList, TouchableOpacity, View, StyleSheet, Text } from "react-native"
 import UsersItem from "../components/UsersItem"
-import {USERS} from '../data/usuarios'
+import {USER} from '../data/usuarios'
 import { useSelector, useDispatch } from "react-redux"
 import { filteredUser, selectUser } from "../store/actions/user.action"
 import { NavigationContainer } from "@react-navigation/native"
 
 const UserScreen = ({navigation}) => {
-    const users = {USERS}
+    const users = {USER}
 
     const dispatch = useDispatch()
     const categoryUser = useSelector(state => state.user.filteredUser)
